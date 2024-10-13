@@ -51,9 +51,9 @@ interface DataTableProps<TData, TValue> {
 export function AdminServicesTable<TData, TValue>({
   columns,
   data,
-  pageNo,
+  // pageNo,
   searchKey,
-  totalServices,
+  // totalServices,
   pageCount,
   pageSizeOptions = [10, 20, 30, 40, 50],
 }: DataTableProps<TData, TValue>) {

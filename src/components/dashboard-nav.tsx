@@ -6,7 +6,7 @@ import { Icons } from '@/components/icons';
 import { NavItem } from '@/types';
 import { Dispatch, SetStateAction } from 'react';
 import { useSidebar } from '@/hooks/useSidebar';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
+import { Tooltip, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import { cn } from '@/lib/utils';
 
 interface DashboardNavProps {
@@ -18,7 +18,7 @@ interface DashboardNavProps {
 export function DashboardNav({
   items,
   setOpen,
-  isMobileNav = false
+  // isMobileNav = false
 }: DashboardNavProps) {
   const path = usePathname();
   const { isMinimized } = useSidebar();

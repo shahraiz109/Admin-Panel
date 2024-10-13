@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
-import { useCreateUserMutation } from '@/api/apiSlice';
 import { useRouter } from 'next/navigation';
+import { useLoginUserMutation } from '@/api/apiSlice';
 
 interface FormData {
   name: string;
@@ -10,7 +10,7 @@ interface FormData {
 }
 
 const Register = () => {
-  const [createUser] = useCreateUserMutation();
+  const [createUser] = useLoginUserMutation();
   const [formData, setFormData] = useState<FormData>({ name: '', email: '', password: '' });
   const [message, setMessage] = useState<string>('');
 
@@ -20,10 +20,11 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await createUser(formData).unwrap();
+      console.log(response)
       setMessage('Please check your email to activate your account!');
       router.push("/auth/activate-user")
     } catch (err) {
-      setMessage('Failed to create user');
+      setMessage('Failed to create user',err);
     }
   };
 

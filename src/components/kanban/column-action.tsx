@@ -31,7 +31,7 @@ export function ColumnActions({
   title: string;
   id: UniqueIdentifier;
 }) {
-  const [open, setIsOpen] = React.useState(false);
+  // const [open, setIsOpen] = React.useState(false);
   const [name, setName] = React.useState(title);
   const updateCol = useTaskStore((state) => state.updateCol);
   const removeCol = useTaskStore((state) => state.removeCol);
@@ -73,9 +73,9 @@ export function ColumnActions({
           <DropdownMenuItem
             onSelect={() => {
               setIsEditDisable(!editDisable);
-              setTimeout(() => {
-                inputRef.current && inputRef.current?.focus();
-              }, 500);
+              // setTimeout(() => {
+              //   inputRef.current && inputRef.current?.focus();
+              // }, 500);
             }}
           >
             Rename

@@ -55,8 +55,8 @@ const formSchema = z.object({
 type ProductFormValues = z.infer<typeof formSchema>;
 
 interface ProductFormProps {
-  initialData: any | null;
-  categories: any;
+  initialData:  | null;
+  categories: | null;
 }
 
 export const EmployeeForm: React.FC<ProductFormProps> = ({
@@ -66,11 +66,11 @@ export const EmployeeForm: React.FC<ProductFormProps> = ({
   const params = useParams();
   const router = useRouter();
   const { toast } = useToast();
-  const [open, setOpen] = useState(false);
+  const [ setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const title = initialData ? 'Edit product' : 'Create product';
   const description = initialData ? 'Edit a product.' : 'Add a new product';
-  const toastMessage = initialData ? 'Product updated.' : 'Product created.';
+  // const toastMessage = initialData ? 'Product updated.' : 'Product created.';
   const action = initialData ? 'Save changes' : 'Create';
 
   const defaultValues = initialData
@@ -88,7 +88,7 @@ export const EmployeeForm: React.FC<ProductFormProps> = ({
     defaultValues
   });
 
-  const onSubmit = async (data: ProductFormValues) => {
+  const onSubmit = async () => {
     try {
       setLoading(true);
       if (initialData) {
@@ -104,7 +104,8 @@ export const EmployeeForm: React.FC<ProductFormProps> = ({
         title: 'Uh oh! Something went wrong.',
         description: 'There was a problem with your request.'
       });
-    } catch (error: any) {
+    } catch (error) {
+      console.log(error)
       toast({
         variant: 'destructive',
         title: 'Uh oh! Something went wrong.',
@@ -115,20 +116,20 @@ export const EmployeeForm: React.FC<ProductFormProps> = ({
     }
   };
 
-  const onDelete = async () => {
-    try {
-      setLoading(true);
-      //   await axios.delete(`/api/${params.storeId}/products/${params.productId}`);
-      router.refresh();
-      router.push(`/${params.storeId}/products`);
-    } catch (error: any) {
-    } finally {
-      setLoading(false);
-      setOpen(false);
-    }
-  };
+  // const onDelete = async () => {
+  //   try {
+  //     setLoading(true);
+  //     //   await axios.delete(`/api/${params.storeId}/products/${params.productId}`);
+  //     router.refresh();
+  //     router.push(`/${params.storeId}/products`);
+  //   } catch (error: any) {
+  //   } finally {
+  //     setLoading(false);
+  //     setOpen(false);
+  //   }
+  // };
 
-  const triggerImgUrlValidation = () => form.trigger('imgUrl');
+  // const triggerImgUrlValidation = () => form.trigger('imgUrl');
 
   return (
     <>
@@ -243,7 +244,6 @@ export const EmployeeForm: React.FC<ProductFormProps> = ({
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {/* @ts-ignore  */}
                       {categories.map((category) => (
                         <SelectItem key={category._id} value={category._id}>
                           {category.name}

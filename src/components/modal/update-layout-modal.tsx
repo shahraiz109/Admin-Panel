@@ -61,7 +61,7 @@ const UpdateCategoryModal: React.FC<UpdateCategoryModalProps> = ({
         }else{
           toast.error(response?.error?.message || "failed category to update")
         }
-      } catch (error:any) {
+      } catch (error) {
         console.error("Failed to update category:", error);
         toast.error(error?.data?.message);
       }

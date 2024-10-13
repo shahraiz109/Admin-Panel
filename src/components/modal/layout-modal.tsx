@@ -8,9 +8,9 @@ const CreateLayoutModal = ({ isOpen, onClose }) => {
   const [categories, setCategories] = useState([{ title: "" }]); // default state
   const [createCategory, { isLoading }] = useCreateCategoryMutation();
 
-  const handleAddCategory = () => {
-    setCategories([...categories, { title: "" }]);
-  };
+  // const handleAddCategory = () => {
+  //   setCategories([...categories, { title: "" }]);
+  // };
 
   const handleCategoryChange = (index, value) => {
     const newCategories = [...categories];

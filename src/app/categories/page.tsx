@@ -7,13 +7,13 @@ import PageContainer from "@/components/layout/page-container";
 import CreateLayoutModal from "@/components/modal/layout-modal";
 import { CategoriesTable } from "@/components/tables/categories-table/cateories-table";
 import { columns } from "@/components/tables/categories-table/columns";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import { Employee } from "@/constants/data";
-import { cn } from "@/lib/utils";
+// import { Employee } from "@/constants/data";
+// import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
-import Link from "next/link";
+// import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 // const breadcrumbItems = [

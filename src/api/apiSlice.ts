@@ -225,6 +225,10 @@ export const apiSlice = createApi({
         url: `/layout/get-all-services`,
         method: API_METHODS.GET,
         credentials: "include",
+        params:{
+          page,
+          limit
+        },
       }),
       providesTags: ["Admin-Services"],
     }),

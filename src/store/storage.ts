@@ -10,13 +10,13 @@ interface Storage {
 // Create a no-operation storage for server-side (to avoid errors during SSR)
 const createNoopStorage = (): Storage => {
   return {
-    getItem(_key: string) {
+    getItem() {
       return Promise.resolve(null);
     },
-    setItem(_key: string, value: string) {
+    setItem() {
       return Promise.resolve();
     },
-    removeItem(_key: string) {
+    removeItem() {
       return Promise.resolve();
     },
   };

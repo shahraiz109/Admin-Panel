@@ -1,50 +1,31 @@
-// import { Breadcrumbs } from '@/components/breadcrumbs';
-// import PageContainer from '@/components/layout/page-container';
-// import { UserClient } from '@/components/tables/user-tables/client';
-// import { users } from '@/constants/data';
-
-// const breadcrumbItems = [
-//   { title: 'Dashboard', link: '/dashboard' },
-//   { title: 'User', link: '/dashboard/user' }
-// ];
-// export default function page() {
-//   return (
-//     <PageContainer>
-//       <div className="space-y-2">
-//         <Breadcrumbs items={breadcrumbItems} />
-//         <UserClient data={users} />
-//       </div>
-//     </PageContainer>
-//   );
-// }
 
 "use client"
 import { useAllUsersQuery } from "@/api/apiSlice";
-import { Breadcrumbs } from "@/components/breadcrumbs";
+// import { Breadcrumbs } from "@/components/breadcrumbs";
 import PageContainer from "@/components/layout/page-container";
 import { columns } from "@/components/tables/employee-tables/columns";
-import { EmployeeTable, UserTable } from "@/components/tables/employee-tables/user-table";
-import { buttonVariants } from "@/components/ui/button";
+import {  UserTable } from "@/components/tables/employee-tables/user-table";
+// import { buttonVariants } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import { Employee } from "@/constants/data";
-import { cn } from "@/lib/utils";
+// import { Employee } from "@/constants/data";
+// import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-const breadcrumbItems = [
-  { title: "Dashboard", link: "/dashboard" },
-  { title: "Employee", link: "/dashboard/employee" },
-];
+// const breadcrumbItems = [
+//   { title: "Dashboard", link: "/dashboard" },
+//   { title: "Employee", link: "/dashboard/employee" },
+// ];
 
-type paramsProps = {
-  searchParams: {
-    [key: string]: string | string[] | undefined;
-  };
-};
+// type paramsProps = {
+//   searchParams: {
+//     [key: string]: string | string[] | undefined;
+//   };
+// };
 
-export default  function UserPage({ searchParams }: paramsProps) {
+export default  function UserPage() {
   // const page = Number(searchParams.page) || 1;
   // const pageLimit = Number(searchParams.limit) || 10;
   // const country = searchParams.search || null;

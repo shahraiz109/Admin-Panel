@@ -8,12 +8,12 @@ import { UserTable } from "@/components/tables/employee-tables/user-table";
 // import { buttonVariants } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import { Employee } from "@/constants/data";
-import { cn } from "@/lib/utils";
+// import { Employee } from "@/constants/data";
+// import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+// import { useState } from "react";
 
 // const breadcrumbItems = [
 //   { title: "Dashboard", link: "/dashboard" },
