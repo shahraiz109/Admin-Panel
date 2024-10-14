@@ -19,7 +19,6 @@ interface CellActionProps {
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
-  console.log("🚀 ~ data:line no =======22", data)
   const [deleteAdminService] = useDeleteAdminServiceMutation();
 
   const [isModalOpen, setModalOpen] = useState(false);
@@ -28,8 +27,8 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
   const [selectedServiceId, setSelectedServiceId] = useState();
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const categoryId = data.categories?.[1]?._id || "";
-  const serviceId = data?.categories?.[1]?.services?.[0]?._id;
+  // const categoryId = data.categories?.[1]?._id || "";
+  // const serviceId = data?.categories?.[1]?.services?.[0]?._id;
 
   const handleUpdateClick = () => {
     setModalOpen(true);
